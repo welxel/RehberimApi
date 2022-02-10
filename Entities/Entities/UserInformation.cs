@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Entities.Entities {
     public class UserInformation:RecordBase {
-        public decimal TelNo { get; set; }
+        public string TelNo { get; set; }
         public string Email { get; set; }
         public double Lat { get; set; }
         public double Lang { get; set; }

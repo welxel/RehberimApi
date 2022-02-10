@@ -104,7 +104,17 @@ namespace Business.Services {
                 result.Soyad = model.Soyad;
                 result.Ad = model.Ad;
                 result.Firma = model.Firma;
-                if (model.userInfo != null) {
+                if (model.userInfo!=null&&result.userInfo==null)
+                {
+                    result.userInfo = new UserInformation()
+                    {
+                        Email = model.userInfo.Email,
+                        Lang = model.userInfo.Lang,
+                        Lat = model.userInfo.Lat,
+                        TelNo = model.userInfo.TelNo
+                    };
+                }
+                else if (model.userInfo != null &&result.userInfo!=null) {
                     result.userInfo.Lang = model.userInfo.Lang;
                     result.userInfo.Lat = model.userInfo.Lat;
                     result.userInfo.TelNo = model.userInfo.TelNo;
